@@ -1,0 +1,15 @@
+
+g=linspace(-pi,pi,500);
+figure
+plot(g,per(g),g,coF(g))
+grid
+
+double x
+function [y]=per(x)
+    y=x
+end
+
+function [y]=coF(x)
+    syms k
+    y=1+symsum(cos(pi*k*x/2)*4*((-1)^k-1)/((pi^2)*(k^2)),k,1,30);
+end
